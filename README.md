@@ -165,6 +165,7 @@ scripts/
 ├── script.js — Threshold тестийн үндсэн script
 ├── script_VUs.js — 5, 30, 100 VU ачааллын тестүүд
 └── script_stages.js — үе шаттай ачааллын тест
+```
 
 ### Тестийн үр дүн
 
@@ -176,7 +177,7 @@ results/
 ├── stages.txt
 ├── threshold-pass.txt
 └── threshold-fail.txt
-
+``` 
 Мөн k6-ийн summary үр дүнгийн screenshot-уудыг `screenshots/` хавтаст хадгалсан.
 
 ## 10. Файлын бүтэц
