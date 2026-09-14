@@ -154,9 +154,17 @@ rate < 0.01
 
 Энэхүү лабораторийн ажлаар Grafana k6 ашиглан системийн гүйцэтгэлийг өөр өөр ачааллын түвшинд хэмжсэн. VU-ийн тоо 5-аас 100 болон өсөхөд throughput 6.920531 req/s-ээс 141.410867 req/s хүртэл нэмэгдсэн. p90 болон p95 latency нь туршилтын хүрээнд огцом өсөөгүй бөгөөд 100 VU үед p95 нь 295.42 ms байсан. Бүх үндсэн тестүүдэд error rate 0.00% гарсан. Энэ нь ачаалал нэмэгдэх үед throughput болон latency-г тусад нь ажиглах шаардлагатайг харуулсан. Мөн percentile хэмжүүрээр хэрэглэгчдийн ихэнх хүсэлтийн гүйцэтгэлийг үнэлж болохыг туршилтаар баталгаажуулсан. Суурь 5 VU тестийн p95 болох 313.93 ms утга дээр үндэслэн SLO-г p95 < 471 ms, error rate < 1% гэж тодорхойлсон. Threshold PASS тестээр 297.59 ms p95 болон 0.00% error rate гарч SLO шаардлагыг хангасан. Харин зориудаар p95 < 50 ms гэсэн хатуу threshold тохируулахад 281.94 ms гарч FAIL болсон нь threshold механизм зөв ажиллаж байгааг баталсан. Ингэснээр системийн гүйцэтгэлийг тоон үзүүлэлтээр үнэлэх, ачааллын өөрчлөлтийн нөлөөг ажиглах болон тодорхой гүйцэтгэлийн шаардлагыг threshold ашиглан шалгах практик туршлага олж авлаа. 
 
-## 9. Үр дүнгийн файлууд
+## 9. Тестийн файлууд ба үр дүн
 
-Бүх k6 тестийн бүрэн текстэн output-уудыг `results/` хавтаст хадгалсан.
+Бүх k6 тестийн script файлуудыг `scripts/` хавтаст, тестийн бүрэн текстэн output-уудыг `results/` хавтаст хадгалсан.
+
+### Script файлууд
+
+- `scripts/script.js` — Threshold тестийн үндсэн script
+- `scripts/script_VUs.js` — 5, 30, 100 VU ачааллын тестүүд
+- `scripts/script_stages.js` — үе шаттай ачааллын тест
+
+### Тестийн үр дүн
 
 ```text
 results/
@@ -166,7 +174,6 @@ results/
 ├── stages.txt
 ├── threshold-pass.txt
 └── threshold-fail.txt
-```
 
 Мөн k6-ийн summary үр дүнгийн screenshot-уудыг `screenshots/` хавтаст хадгалсан.
 
@@ -174,7 +181,6 @@ results/
 
 ```text
 k6_lab2/
-├── script.js
 ├── README.md
 ├── results/
 │   ├── run-05vu.txt
@@ -183,5 +189,14 @@ k6_lab2/
 │   ├── stages.txt
 │   ├── threshold-pass.txt
 │   └── threshold-fail.txt
-└── screenshots/
-```
+├── screenshots/
+│   ├── run-05vu.png
+│   ├── run-30vu.png
+│   ├── run-100vu.png
+│   ├── stages.png
+│   ├── threshold-pass.png
+│   └── threshold-fail.png
+└── scripts/
+    ├── script.js
+    ├── script_VUs.js
+    └── script_stages.js
