@@ -160,9 +160,11 @@ rate < 0.01
 
 ### Script файлууд
 
-- `scripts/script.js` — Threshold тестийн үндсэн script
-- `scripts/script_VUs.js` — 5, 30, 100 VU ачааллын тестүүд
-- `scripts/script_stages.js` — үе шаттай ачааллын тест
+```text
+scripts/
+├── script.js — Threshold тестийн үндсэн script
+├── script_VUs.js — 5, 30, 100 VU ачааллын тестүүд
+└── script_stages.js — үе шаттай ачааллын тест
 
 ### Тестийн үр дүн
 
